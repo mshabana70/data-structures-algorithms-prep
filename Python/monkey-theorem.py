@@ -15,5 +15,30 @@ def generate_random():
         random_string += random.choice(letters)
     return random_string
 
-generated_string = generate_random()
-print(f"The generated string: {generated_string}")
+# Compare generated string to the target string and return a score
+def score(random_string, test_string):
+    score = 0
+    for index in range(len(random_string)):
+        if random_string[index] == test_string[index]:
+            score += 1
+    return float(score / len(random_string)) * 100
+
+# Loop through generated strings and the score of such strings
+def run_loop():
+    best_score = 0.0
+    best_string = ""
+    iterations = 0
+    while best_score != 100.0:
+        for _ in range(1000000):
+            random_string = generate_random()
+            test_score = score(random_string, target_string)
+            if test_score > best_score:
+                best_score = test_score
+                best_string = random_string
+        iterations += 1
+        print(f"After {iterations} iterations, {best_score} is the highest score with string: {best_string}")
+    return iterations
+
+
+# Test run loop function 
+run_loop()
