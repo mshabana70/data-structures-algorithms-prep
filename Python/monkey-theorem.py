@@ -16,4 +16,4 @@ def generate_random():
     return random_string
 
 generated_string = generate_random()
-print(generated_string)
+print(f"The generated string: {generated_string}")
