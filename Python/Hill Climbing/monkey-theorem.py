@@ -30,7 +30,7 @@ def run_loop():
     best_string = ""
     iterations = 0
     while best_score != 100.0:
-        for _ in range(1000000):
+        for _ in range(1000):
             random_string = generate_random(28)
             test_score = score(random_string, target_string)
             if test_score > best_score:
@@ -59,7 +59,8 @@ def run_loop_two():
 
 
 # Test run loop function 
-run_loop_two()
+#run_loop_two()
+run_loop()
 
 
 # Following the tutorial vid
