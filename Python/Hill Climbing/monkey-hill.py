@@ -22,7 +22,7 @@ import random
 import string
 
 # Generate Random Solution
-def generate_random_solution(length=29):
+def generate_random_solution(length=28):
     """Returns a random solution. Will be useful in population-based genetic solution in the future."""
     return [random.choice(string.printable) for _ in range(length)]
 
@@ -46,13 +46,13 @@ def evaluate(solution):
 # In genetic algorithms, mutating a solution means randomely changing it in a minute way.
 def mutate_solution(solution):
     """Change one of the letters randomely."""
-    index = random.randrange(len(solution) - 1)
+    index = random.randrange(len(solution))
     solution[index] = random.choice(string.printable)
     # string.printable = 0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&'()*+, -./:;<=>?@[\]^_`{|}~ 
 
 # General outline of Hill Climbing Algorithm
 
-best_solution = generate_random_solution(solution)
+best_solution = generate_random_solution()
 best_score = evaluate(best_solution)
 
 while True:
@@ -66,5 +66,4 @@ while True:
     if evaluate(new_solution) < best_score:
         best_solution = new_solution
         best_score = score
-
 
