@@ -11,6 +11,14 @@ class Fraction:
         self.num = top // self.common
         self.den = bottom // self.common
     
+    def get_num(self):
+        """Method that returns the numerator of a fraction."""
+        return {self.num}
+    
+    def get_den(self):
+        """Method that returns the denominator of a fraction."""
+        return {self.den}
+    
     def gcd(self, m, n):
         while m % n != 0:
             m, n = n, m % n
