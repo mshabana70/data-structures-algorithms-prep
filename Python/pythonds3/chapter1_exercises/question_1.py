@@ -7,22 +7,16 @@ class Fraction:
     """Class Fraction"""  
     def __init__(self, top, bottom):
         """Constructor definition"""
-        self.common = self.gcd(top, bottom)
-        self.num = top // self.common
-        self.den = bottom // self.common
+        self.num = top 
+        self.den = bottom 
     
     def get_num(self):
         """Method that returns the numerator of a fraction."""
-        return {self.num}
+        return self.num
     
     def get_den(self):
         """Method that returns the denominator of a fraction."""
-        return {self.den}
-    
-    def gcd(self, m, n):
-        while m % n != 0:
-            m, n = n, m % n
-        return n
+        return self.den
 
     def show(self):
         print(f"{self.num}/{self.den}")
@@ -31,5 +25,7 @@ class Fraction:
         return f"{self.num}/{self.den}"
 
 
+# Testing new methods
 my_fraction = Fraction(6, 8)
-print(my_fraction)
+print(my_fraction.get_num()) # Output = 6
+print(my_fraction.get_den()) # Output = 8
