@@ -28,3 +28,15 @@ class Fraction:
 
     def __str__(self):
         return f"{self.num}/{self.den}"
+
+
+# Testing new constructor
+
+test_fraction_one = Fraction(2, 3)
+print(test_fraction_one) # output 2/3
+
+test_fraction_two = Fraction(6, 8)
+print(test_fraction_two) # output = 3/4
+
+test_fraction_three = Fraction(12, 15)
+print(test_fraction_three) # output = 4/5
