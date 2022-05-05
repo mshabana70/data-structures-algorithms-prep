@@ -28,4 +28,21 @@ class Fraction:
 
     def __str__(self):
         return f"{self.num}/{self.den}"
-        
+    
+    def __add__(self, other_fraction):
+        new_num = self.num * other_fraction.den + \
+                    self.den * other_fraction.num
+        new_den = self.den * other_fraction.den
+        common = self.gcd(new_num, new_den)
+        return Fraction(new_num // common, new_den // common)
+    
+    def __radd__(self, other_fraction):
+        return other_fraction.__add__(self)
+
+# Testing methods
+fraction_one = Fraction(1, 2)
+fraction_two = Fraction(3, 4)
+
+print(fraction_one + fraction_two)
+print(fraction_one.__radd__(fraction_two))
+
