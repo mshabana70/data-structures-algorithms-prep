@@ -38,3 +38,17 @@ class Fraction:
     
     def __radd__(self, other_fraction):
         return other_fraction.__add__(self)
+    
+    def __iadd__(self, other_fraction):
+        new_value = self.__add__(other_fraction)
+        return new_value
+
+# Test new method
+fraction_one = Fraction(1, 2)
+fraction_two = Fraction(1, 8)
+
+for _ in range(2):
+    fraction_one += fraction_two
+
+print(fraction_one)
+
