@@ -1,5 +1,5 @@
 """
-7. Research the __radd__ method. How does it differ from __add__? When is it used? Implement __radd__.
+8. Repeat the last question but this time consider the __iadd__ method.
 """
 
 class Fraction:
@@ -38,11 +38,3 @@ class Fraction:
     
     def __radd__(self, other_fraction):
         return other_fraction.__add__(self)
-
-# Testing methods 
-fraction_one = Fraction(1, 2)
-fraction_two = Fraction(3, 4)
-
-print(fraction_one + fraction_two)
-print(fraction_one.__radd__(fraction_two))
-
