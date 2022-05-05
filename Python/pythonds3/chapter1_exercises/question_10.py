@@ -123,7 +123,22 @@ class NandGate(AndGate):
         if output == 1:
             return 0
         else:
-            return 1      
+            return 1   
+
+class XorGate(BinaryGate):
+
+    def __init__(self, n):
+        BinaryGate.__init__(self, n)
+        
+    def perform_gate_logic(self):
+        
+        a = self.get_pin_a()
+        b = self.get_pin_b()
+
+        if (a == 1 and b == 1) or (a == 0 and b == 0):
+            return 0
+        else:
+            return 1    
         
 
 class Connector:
@@ -150,6 +165,8 @@ def main():
     g5 = AndGate("G5")
     g6 = AndGate("G6")
 
+    x1 = XorGate("X1")
+
     c1 = Connector(g1, g3)
     c2 = Connector(g2, g3)
     c3 = Connector(g5, g4)
@@ -157,5 +174,6 @@ def main():
     
     print(g3.get_output())
     print(g4.get_output())
+    print(x1.get_output())
 
 main()
