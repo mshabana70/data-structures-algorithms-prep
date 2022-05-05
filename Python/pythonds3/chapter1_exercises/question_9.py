@@ -24,6 +24,7 @@ class Fraction:
         return n
     
     def __repr__(self):
+        """Method overrides the repr() method, which is called by str()."""
         return f"Fraction({self.num}, {self.den})"
 
 # test new method
